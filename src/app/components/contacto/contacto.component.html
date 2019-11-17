@@ -1,0 +1,84 @@
+<main>
+ <section class="section-base">
+            <div class="container">
+
+                <!-- <div class="google-map" data-marker="media/marker.png" data-coords="46.01049736894874,11.22314543457037"></div>   --> 
+                <hr class="space" />
+                <div class="row">
+                
+                    <div class="col-lg-8">
+                        <div class="title">
+                            <h2>Escríbenos</h2>
+                            <p>Consulta tus dudas</p>
+                        </div>
+                       <form  class="form"[formGroup]="ngFormSendContact" (ngSubmit) ="sendContact()">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                                <p>Nombre</p>
+                                                <input type="text" class="form-control" id="nombre" formControlName="nombre" placeholder="Nombre" [(ngModel)]="contact.nombre"
+                                                        [ngClass]="{ 'is-invalid': submitted && fval2.nombre.errors }"
+                                                        required>
+                                                        <div *ngIf="submitted && fval2.nombre.errors" class="invalid-feedback">
+                                                            <div *ngIf="fval2.nombre.errors.required" class="errorLabel">
+                                                            * El nombre es requerido
+                                                            </div>
+
+                                                        </div>
+                                            </div>
+                                <div class="col-lg-6">
+                                                <p>Email</p>
+                                                <input type="text" class="form-control" id="email" formControlName="email" placeholder="email" [(ngModel)]="contact.email"
+                                                        [ngClass]="{ 'is-invalid': submitted && fval2.email.errors }"
+                                                        required>
+                                                        <div *ngIf="submitted && fval2.email.errors" class="invalid-feedback">
+                                                            <div *ngIf="fval2.email.errors.required" class="errorLabel">
+                                                            * El email es requerido
+                                                            </div>
+                                                        </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                            <div class="form-group">
+                                                        <label for="mensaje">Mensaje</label>
+                                                        <textarea class="form-control height-70" id="mensaje" formControlName="mensaje" placeholder="Mensaje" [(ngModel)]="contact.mensaje"
+                                                        [ngClass]="{ 'is-invalid': submitted && fval2.mensaje.errors }"
+                                                        required></textarea>
+                                                        <div *ngIf="submitted && fval2.mensaje.errors" class="invalid-feedback">
+                                                            <div *ngIf="fval2.mensaje.errors.required" class="errorLabel">
+                                                            * Cuentanos con mayor detalle 
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                            </div>
+                    
+
+                                         <hr class="space-xs" />
+
+                                            <div class="col-lg-12 align-right">
+                                             <a (click)="sendContact()"class="btn btn-sm btn-circle btn-icon"><i class="fa fa-search"></i>Enviar </a>
+                                         </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="title">
+                            <h2>Contáctanos</h2>
+                            <p>Informate aquí</p>
+                        </div>
+                        <ul class="text-list text-list-line">
+                            <li><b>Dirección</b><hr /><p>Metropoly, Santiago - Chile</p></li>
+                            <li><b>Web</b><hr /><p>andesproadventures.com</p></li>
+                            <li><b>Email</b><hr /><p>andesproadventures@gmail.com</p></li>
+                            <li><b>Teléfono</b><hr /><p>(56) 9 5824 9250</p></li>
+                        </ul> 
+                        <hr class="space-sm" />
+                        <div class="icon-links icon-social icon-links-grid social-colors-hover">
+                            <a href="https://www.facebook.com/andesproadventures/" target="_blank" class="facebook"><i class="icon-facebook"></i></a>
+                            <a href="https://www.youtube.com/channel/UC-wOjzoP7yW-BczUkuypLMg" target="_blank" class="youtube"><i class="icon-youtube"></i></a>
+                            <a href="https://www.instagram.com/andesproadventures/" target="_blank" class="instagram"><i class="icon-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</section>
+</main>
+<app-footer></app-footer>
