@@ -64,25 +64,13 @@ public user : UserInterface ={
     };
 
 public tix : TixInterface ={
-      address:"",
-      altitud:"",
-      cantD:0,
-      capacidad:0,
-      category:"",
-      description:"",
-      desLg:"",
-      dificulty:"",
-      disponibilidad:"",
-      distancia:"",
-      duracion:"",
-      images:[],
-      notes:"",
-      precio:0,
+       userd:"",
       productName:"",
+      description:"",
+      notes:"",
+      category:"",
       status:"",
-      temp:"",
-      tips:"",
-      userd:"",
+      images:[]
     };
 
 
@@ -93,22 +81,11 @@ public tix : TixInterface ={
 
   ngOnInit() {
     this._uw.images=[];
-    this._uw.errorFormAddtixs=false;
-  	 this.ngFormAddtixs = this.formBuilder.group({
-      address: ['', [Validators.required]],
-      altitud: ['', [Validators.required]],
-      cantD: ['', [Validators.required]],
-      capacidad: ['', [Validators.required]],
-      category: ['', [Validators.required]],
-      description: ['', [Validators.required]],      
-      desLg: ['', [Validators.required]],      
-      dificulty: ['', [Validators.required]],
-      distancia: ['', [Validators.required]],
-      duracion: ['', [Validators.required]],
-      precio:['',[Validators.required]],
+ this.ngFormAddtixs = this.formBuilder.group({
       productName: ['', [Validators.required]],
-      temp: ['', [Validators.required]],
-      tips: ['', [Validators.required]],
+      description: ['', [Validators.required]],
+      notes: ['', [Validators.required]],
+      category: ['', [Validators.required]]
       });
   }
 
@@ -165,7 +142,7 @@ public tix : TixInterface ={
   }
   onFileAdded(file: FilePreviewModel) {
     
-    file.fileName="https://db.andesproadventures.com:80/imgApi/server/local-storage/tixsImages/"+file.fileName;
+    file.fileName="https://db.andesproadventures.com:80/imgTixs/server/local-storage/tixsImages/"+file.fileName;
     this.myFiles.push(file);
     // this.images.push(file.fileName);
 

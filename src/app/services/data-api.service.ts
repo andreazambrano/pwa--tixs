@@ -42,7 +42,7 @@ export class DataApiService {
   // 	  updateTix(tix) {
   //   const tixI = tix.tixI;
   //   const token = this.authService.getToken();
-  //   const url_api = `https://db.andesproadventures.com:3003/api/product/${tixI}/?access_token=${token}`;
+  //   const url_api = `https://db.andesproadventures.com:3013/api/tixes/${tixI}/?access_token=${token}`;
   //   return this.http
   //     .put<TixInterface>(url_api, book, { headers: this.headers })
   //     .pipe(map(data => data));
@@ -50,144 +50,144 @@ export class DataApiService {
 
 
   	getBookPending(){	
-		const url_api='https://db.andesproadventures.com:3003/api/book?filter[where][status]=pending';
+		const url_api='https://db.andesproadventures.com:3013/api/book?filter[where][status]=pending';
 		return (this.books = this.http.get(url_api));
 	}
 	getBookConf(){	
-		const url_api='https://db.andesproadventures.com:3003/api/book?filter[where][status]=Confirmada';
+		const url_api='https://db.andesproadventures.com:3013/api/book?filter[where][status]=Confirmada';
 		return (this.books = this.http.get(url_api));
 	}
 	getValidationPending(){
-		const url_api='https://db.andesproadventures.com:3003/api/validations?filter[where][status]=pending';
+		const url_api='https://db.andesproadventures.com:3013/api/validations?filter[where][status]=pending';
 		return (this.books = this.http.get(url_api));
 	}
 
 
 	getAllTixs(){
-		const url_api = 'https://db.andesproadventures.com:3003/api/product?filter[where][status]=activated';
+		const url_api = 'https://db.andesproadventures.com:3013/api/tixes?filter[where][status]=activated';
 		return this.http.get(url_api);
 
 	}
 	getAllTixsReturn(){
-		const url_api = 'https://db.andesproadventures.com:3003/api/product?filter[where][status]=activated';
+		const url_api = 'https://db.andesproadventures.com:3013/api/tixes?filter[where][status]=activated';
 		return (this.tixs = this.http.get(url_api));
 
 	}
 	getTixById(id:string){
 		//console.log(id);
 		let indice = id;
-		const url_api=`https://db.andesproadventures.com:3003/api/product/${indice}`;
+		const url_api=`https://db.andesproadventures.com:3013/api/tixes/${indice}`;
 		this.tix = this.http.get(url_api);
 	
 		return (this.tix);
 	}
 	getCardById(id:string){
 		let indice = id;
-		const url_api=`https://db.andesproadventures.com:3003/api/card/${indice}`;
+		const url_api=`https://db.andesproadventures.com:3013/api/card/${indice}`;
 		this.card = this.http.get(url_api);
 		return (this.card);
 	}
 	getBookById(id:string){
 		let indice = id;
-		const url_api=`https://db.andesproadventures.com:3003/api/book/${indice}`;
+		const url_api=`https://db.andesproadventures.com:3013/api/book/${indice}`;
 		this.book = this.http.get(url_api);
 		return (this.book);
 	}
 	getInfo(){
 		// let indice = id;
-		const url_api=`https://db.andesproadventures.com:3003/api/infos/`;
+		const url_api=`https://db.andesproadventures.com:3013/api/infos/`;
 		this.info = this.http.get(url_api);
 		return (this.info);
 	}
 	getPending(){
-		const url_api='https://db.andesproadventures.com:3003/api/product?filter[where][status]=pending';
+		const url_api='https://db.andesproadventures.com:3013/api/tixes?filter[where][status]=pending';
 		return (this.tixs = this.http.get(url_api));
 	}
 	getUsersPending(){
-		const url_api='https://db.andesproadventures.com:3003/api/card?filter[where][status]=pending';
+		const url_api='https://db.andesproadventures.com:3013/api/card?filter[where][status]=pending';
 		return (this.cards = this.http.get(url_api));
 	}
 
 	getActivePartners(){
-		const url_api='https://db.andesproadventures.com:3003/api/card?filter[where][and][0][status]=active&filter[where][and][1][type]=partnerType';
+		const url_api='https://db.andesproadventures.com:3013/api/card?filter[where][and][0][status]=active&filter[where][and][1][type]=partnerType';
 		return (this.cards = this.http.get(url_api));
 	}
 	getPendingPartners(){
-		const url_api='https://db.andesproadventures.com:3003/api/card?filter[where][and][0][status]=pending&filter[where][and][1][type]=partnerType';
+		const url_api='https://db.andesproadventures.com:3013/api/card?filter[where][and][0][status]=pending&filter[where][and][1][type]=partnerType';
 		return (this.cards = this.http.get(url_api));
 	}
 
 	getActiveAffiliates(){
-		const url_api='https://db.andesproadventures.com:3003/api/card?filter[where][and][0][status]=active&filter[where][and][1][type]=affiliateType';
+		const url_api='https://db.andesproadventures.com:3013/api/card?filter[where][and][0][status]=active&filter[where][and][1][type]=affiliateType';
 		return (this.cards = this.http.get(url_api));
 	}
 	getPendingAffiliates(){
-		const url_api='https://db.andesproadventures.com:3003/api/card?filter[where][and][0][status]=pending&filter[where][and][1][type]=affiliateType';
+		const url_api='https://db.andesproadventures.com:3013/api/card?filter[where][and][0][status]=pending&filter[where][and][1][type]=affiliateType';
 		return (this.cards = this.http.get(url_api));
 	}
 	saveTixFree(tix :TixInterface){
 	//	let token = this.authService.getToken();
-		const url_api='https://db.andesproadventures.com:3003/api/product';
+		const url_api='https://db.andesproadventures.com:3013/api/tixes';
 		return this.http
 		.post<TixInterface>(url_api, tix)
 		.pipe(map(data => data));
 	}
 	saveTix(tix :TixInterface){
 		let token = this.authService.getToken();
-		const url_api='https://db.andesproadventures.com:3003/api/product?access_token${token}';
+		const url_api='https://db.andesproadventures.com:3013/api/tixes?access_token${token}';
 		return this.http
 		.post<TixInterface>(url_api, tix,{headers: this.headers})
 		.pipe(map(data => data));
 	}
 	updateTix(tix :TixInterface, id: string){
 		let token = this.authService.getToken();
-		const url_api=`https://db.andesproadventures.com:3003/api/product/${id}/?access_token$={token}`;
+		const url_api=`https://db.andesproadventures.com:3013/api/tixes/${id}/?access_token$={token}`;
 		return this.http
 		.put<TixInterface>(url_api, tix,{headers: this.headers})
 		.pipe(map(data => data));
 	}
 	updateBook(book :BookInterface, id: string){
 		let token = this.authService.getToken();
-		const url_api=`https://db.andesproadventures.com:3003/api/book/${id}/?access_token$={token}`;
+		const url_api=`https://db.andesproadventures.com:3013/api/book/${id}/?access_token$={token}`;
 		return this.http
 		.put<BookInterface>(url_api, book,{headers: this.headers})
 		.pipe(map(data => data));
 	}
 	updateValidation(validation :ValidationInterface, id: string){
 		let token = this.authService.getToken();
-		const url_api=`https://db.andesproadventures.com:3003/api/validations/${id}/?access_token$={token}`;
+		const url_api=`https://db.andesproadventures.com:3013/api/validations/${id}/?access_token$={token}`;
 		return this.http
 		.put<ValidationInterface>(url_api, validation,{headers: this.headers})
 		.pipe(map(data => data));
 	}
 	deleteTix(id: string){
 		const token = this.authService.getToken();
-		const url_api=`https://db.andesproadventures.com:3003/api/product/${id}/?access_token$={token}`;
+		const url_api=`https://db.andesproadventures.com:3013/api/tixes/${id}/?access_token$={token}`;
 		return this.http
 		.delete<TixInterface>(url_api, {headers: this.headers})
 		.pipe(map(data => data));
 	}
 	getCards(id:string){
 		let indice = id;
-		const url_api = "https://db.andesproadventures.com:3003/api/card?filter[where][userd]=a"+indice;
+		const url_api = "https://db.andesproadventures.com:3013/api/card?filter[where][userd]=a"+indice;
 		return this.http.get(url_api);
 	}
 	saveCard(card: CardInterface){
 		//const token = this.authService.getToken();
 		//console.log(token);
-		const url_api='https://db.andesproadventures.com:3003/api/card';
+		const url_api='https://db.andesproadventures.com:3013/api/card';
 		return this.http
 		.post<CardInterface>(url_api, card)
 		.pipe(map(data => data));
 	}
 	saveBook(book: BookInterface){
-		const url_api='https://db.andesproadventures.com:3003/api/book';
+		const url_api='https://db.andesproadventures.com:3013/api/book';
 		return this.http
 		.post<BookInterface>(url_api, book)
 		.pipe(map(data => data));
 	}
 	saveValidation(validation: ValidationInterface){
-		const url_api='https://db.andesproadventures.com:3003/api/validations';
+		const url_api='https://db.andesproadventures.com:3013/api/validations';
 		return this.http
 		.post<ValidationInterface>(url_api, validation)
 		.pipe(map(data => data));

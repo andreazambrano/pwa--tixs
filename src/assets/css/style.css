@@ -2528,7 +2528,7 @@ html body .bg-z {
 }
 
 nav.navbar.bootsnav ul.nav>li>a {
-    color: #6b797c;
+    color: #6b797c !important;
     font-weight: 400;
     font-size: 14px;
     font-family: Montserrat,sans-serif;

@@ -16,11 +16,16 @@ constructor(
     private dataApi: DataApiService
   	) { }
   public tixs:TixInterface;
-
+ getAllTixs(){
+//      this.dataApi.getAllTixs().subscribe(tixs => console.log(tixs));
+        this.dataApi
+        .getAllTixs()
+        .subscribe((tixs: TixInterface) => (this.tixs=tixs));
+    }
 
 
   ngOnInit() {
-  	 // this.getAllTixs();
+  	 this.getAllTixs();
   } 
 
 }
