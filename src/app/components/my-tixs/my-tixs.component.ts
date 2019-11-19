@@ -123,9 +123,9 @@ export class MyTixsComponent implements OnInit {
     this.dataApi.getCards(card_id);
     }
    getAllTixs(){
-        // this.dataApi
-        // .getAllTixsReturn()
-        // .subscribe((tixs: TixInterface) => (this.tixs=tixs));
+        this.dataApi
+        .getAllTixsReturn()
+        .subscribe((tixs: TixInterface) => (this.tixs=tixs));
 
 
         this.dataApi

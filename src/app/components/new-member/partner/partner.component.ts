@@ -75,7 +75,7 @@ export class PartnerComponent implements OnInit {
       let val=(this.user.id).toString();
       this.card = this.ngFormPartner.value;
       this.card.userd="a"+val;
-      this.card.type="adminType";
+      this.card.type="partnerType";
       this.card.status="acivated";
       this.card.name=this.user.name;
       return this.dataApiService.saveCard(this.card)

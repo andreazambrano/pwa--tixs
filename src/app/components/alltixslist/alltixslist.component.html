@@ -42,33 +42,32 @@
 				<div class="row">
 					
 					<!-- Single Destination List -->
-					<div class="col-lg-12 col-md-12 col-xs-12" *ngFor="let tix of tixs">
-						<div class="destination-box list-style" style="height: 100%;">
+				<div class="col-lg-6 col-md-6"  *ngFor="let tix of tixs">
+						<article class="destination-box list-style">
 							<div class="row">
 								
-								<div class="col-md-3 col-sm-3 col-xs-6">
+								<div class="col-md-5 col-sm-5">
 									<div class="destination-box-image">
 										<a routerLink="/tix-detail/{{tix.id}}">
-						                    <img src="{{tix.images[0]}}" class="img-responsive listing-box-img" alt="{{tix.productName}}"  />
-						                    <div class="list-overlay" ></div>
-						                </a>
-										<a  class="list-like left"><i class="ti-heart"></i></a>
+											<img src="{{tix.images[0]}}"class="img-responsive destination-box-img" alt="" />
+										</a>
+										<a href="destination-list.html#" class="list-like left"><i class="ti-heart"></i></a>
 										<div class="destination-time">
 											<i class="ti ti-car"></i><span>3 days</span>
 										</div>
 									</div>
 								</div>
 							
-								<div class="col-md-9 col-sm-9 col-xs-6">	
+								<div class="col-md-7 col-sm-7">	
 									<div class="inner-box">
 										<div class="discount-flick">-22%</div>
 										<div class="box-inner-ellipsis">
 											<div style="margin: 0px; padding: 0px; border: 0px;">
 												<h3 class="entry-title">
-													<a >{{tix.productName}}</a>
+													<a href="destination-detail.html">Bali, Indonesia</a>
 												</h3>
 												<div class="entry-content">
-													<p></p>
+													<p>Post A Job To Tell Us About Your Project. We'll Quickly Match You With The Right Freelancers.</p>
 													<span class="price">From <strong class="theme-cl">$170</strong> /per person</span>
 												</div>
 											</div>
@@ -79,7 +78,7 @@
 												<div class="coauthors">
 													<div class="vcard author">
 														<div class="fn">
-															<h4><a >Hong Kong</a></h4>
+															<h4><a href="destination-detail.html">Hong Kong</a></h4>
 														</div>
 													</div>
 												</div>
@@ -100,10 +99,10 @@
 							
 							</div>
 
-						</div>
+						</article>
 					</div>
 					
-				
+					
 					
 				</div>
 				

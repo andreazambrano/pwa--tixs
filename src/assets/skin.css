@@ -524,7 +524,8 @@ button {
 }
 
 h1 + p, h2 + p, p + .btn, p + .btn-text, p + table, p + pre, p + img, p + .row, p + .img-box, p + .media-box, p + .cnt-box, p + .hc-icon-links, p + ul.icon-list, .container > .row + .row, .container > div + p, .container > div + .btn, .table + .btn, .table + .btn-text {
-    margin-top: 40px;
+    /*margin-top: 40px;*/ 
+    /*margen suerior modificado*/
 }
 
 h2 + h4 {

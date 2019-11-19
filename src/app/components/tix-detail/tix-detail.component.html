@@ -1,4 +1,4 @@
-<section class="profile-header-nav gray-bg padd-0 bb-1">
+<section class="profile-header-nav white-bg padd-0 bb-1">
 	<div class="container">
 		<div class="row">
 			<div class="tr-list-detail">
@@ -28,25 +28,32 @@
 						<div class="tab-content tabs">
 							
 
-							<div role="tabpanel" class="tab-pane fade in active" id="Photos">
+							<div *ngIf="tix" role="tabpanel" class="tab-pane fade in active" id="Photos">
 								<div class="row">
-									<div class="tr-single-box">
-										<div class="tr-single-header">
+									<div class="tr-single-box" style="border:0px;">
+									<!-- 	<div class="tr-single-header" style="border:0px;">
 											<h4><i class="fa fa-star-o"></i>Overview</h4>
-										</div>
+										</div> -->
 										<div class="tr-single-body">
 											<div class="row">
 											
-												<div class="col-md-6 col-sm-6">
-													<div class="list-thumb-box" *ngFor="let item of tix.images; let i=index;" >
+												<div  class="col-md-5 col-sm-6">
+													<div   class="list-thumb-box" *ngFor="let item of tix.images; let i=index;" >
 														<img 
 														src="{{item}}"  *ngIf="i === 0"class="img-responsive" alt="" />
-														<a href="restaurant-detail.html#" class="list-like left"><i class="ti-heart"></i></a>
+														<a  class="list-like left"><i class="ti-heart"></i></a>
 														<h5>4.8/<sub class="theme-cl">5</sub></h5>
 													</div>
+													<ul class="gallery-list">
+												<li *ngFor="let image of tix.images">
+													<a data-fancybox="gallery" href="{{image}}">
+														<img src="{{image}}" class="img-responsive" eralt="">
+													</a>
+												</li>
+											</ul>
 												</div>
 												
-												<div class="col-md-6 col-sm-6">
+												<div class="col-md-7 col-sm-6">
 													<div class="list-overview-detail">
 														<h5>{{tix.productName}}</h5>
 														{{tix.description}}
@@ -58,7 +65,7 @@
 									</div>
 								</div>
 								
-								<div class="row">
+								<!-- <div class="row">
 									<div class="tr-single-box">
 										<div class="tr-single-header">
 											<h4><i class="ti-gallery"></i>All Gallery</h4>
@@ -67,172 +74,25 @@
 											<ul class="gallery-list">
 												<li *ngFor="let image of tix.images">
 													<a data-fancybox="gallery" href="{{image}}">
-														<img src="{{image}}" class="img-responsive" alt="">
+														<img src="{{image}}" class="img-responsive" eralt="">
 													</a>
 												</li>
 											</ul>
 										</div>
 									</div>
-								</div>
+								</div> -->
 							</div>
 
-							<div role="tabpanel" class="tab-pane fade in " id="Overview">
-								
-								<!-- Overview -->
-								<div class="row">
-									<div class="tr-single-box">
-										<div class="tr-single-header">
-											<h4><i class="fa fa-star-o"></i>Overview</h4>
-										</div>
-										<div class="tr-single-body">
-											<div class="row">
-											
-												<div class="col-md-6 col-sm-6">
-													<div class="list-thumb-box">
-														<img src="assets/img/res/res-2.jpg" class="img-responsive" alt="" />
-														<a href="restaurant-detail.html#" class="list-like left"><i class="ti-heart"></i></a>
-														<h5>4.8/<sub class="theme-cl">5</sub></h5>
-													</div>
-												</div>
-												
-												<div class="col-md-6 col-sm-6">
-													<div class="list-overview-detail">
-														<h5>Green Vally Restaurant</h5>
-														<ul class="extra-service">
-															<li>
-																<div class="icon-box-icon-block">
-																	<a href="restaurant-detail.html#">
-																		<div class="icon-box-round">
-																			<i class=" ti-location-pin"></i>
-																		</div>
-																		<div class="icon-box-text">
-																			Istanbul, Turkey, Newyork, 052 458
-																		</div>
-																	</a>
-																</div>
-															</li>
-															
-															<li>
-																<div class="icon-box-icon-block">
-																	<a href="restaurant-detail.html#">
-																		<div class="icon-box-round">
-																			<i class="ti-email"></i>
-																		</div>
-																		<div class="icon-box-text">
-																			destination@gmail.com
-																		</div>
-																	</a>
-																</div>
-															</li>
-															
-															<li>
-																<div class="icon-box-icon-block">
-																	<a href="restaurant-detail.html#">
-																		<div class="icon-box-round">
-																			<i class="ti-headphone-alt"></i>
-																		</div>
-																		<div class="icon-box-text">
-																			125 458 75849
-																		</div>
-																	</a>
-																</div>
-															</li>
-															
-															<li>
-																<div class="icon-box-icon-block">
-																	<a href="restaurant-detail.html#">
-																		<div class="icon-box-round">
-																			<i class="ti-share"></i>
-																		</div>
-																		<div class="icon-box-text">
-																			110 Share
-																		</div>
-																	</a>
-																</div>
-															</li>
-															
-															<li>
-																<div class="icon-box-icon-block">
-																	<a href="restaurant-detail.html#">
-																		<div class="icon-box-round">
-																			<i class="ti-comment-alt"></i>
-																		</div>
-																		<div class="icon-box-text">
-																			22 comments
-																		</div>
-																	</a>
-																</div>
-															</li>
-															
-														</ul>
-													</div>
-												</div>
-												
-											</div>
-										</div>
-									</div>
-								</div>
-								
 							
-							
-								
-								<!-- Description -->
-								<div class="row">
-									<div class="tr-single-box">
-										<div class="tr-single-header">
-											<h4><i class="ti-files"></i>Description</h4>
-										</div>
-										<div class="tr-single-body">
-											<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus..</p>
-											<p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.</p>
-											<p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam.</p>
-										</div>
-									</div>
-								</div>
-								
-								<!-- Amenities -->
-								<div class="row">
-									<div class="tr-single-box">
-										<div class="tr-single-header">
-											<h4><i class="ti-crown"></i>Amenities</h4>
-										</div>
-										<div class="tr-single-body">
-											<ul class="amenities third">
-												<li>Satellite TV</li>
-												<li>Coffeemaker</li>
-												<li>Hair Dryer</li>
-												<li>Swimming Pool</li>
-												<li>Room Service</li>
-												<li>Luxury Bedding</li>
-												<li>Good Showers</li>
-												<li>Free Parking</li>
-												<li>Free Wifi</li>
-												<li>Bath towel</li>
-												<li>Free Coffee</li>
-												<li>Pets Allow</li>
-												<li>Hot Water</li>
-												<li>Attached garage </li>
-												<li>Elevator</li>
-												<li>Spa/Sauna</li>
-												<li>Indoor pool </li>
-												<li>Security cameras </li>
-											</ul>
-										</div>
-									</div>
-								</div>
-								
-							
-								
-							</div>
 							
 							<!-- ============ Features =================== -->
 							<div role="tabpanel" class="tab-pane fade in" id="Features">
 								
 								<div class="row">
-									<div class="tr-single-box">
-										<div class="tr-single-header">
+									<div class="tr-single-box" style="border:0px;">
+										<!-- <div class="tr-single-header">
 											<h4><i class="ti-crown"></i>Amenities</h4>
-										</div>
+										</div> -->
 										<div class="tr-single-body">
 											<ul class="amenities third">
 												<li>Satellite TV</li>
@@ -324,13 +184,13 @@
 									</div>
 									
 									<div class="row">
-										<div class="col-xs-6">
+										<div class="col-sm-6">
 											<div class="form-group">
 												<label>Adult</label>
 												<input type="number" name="adult" value="1" class="form-control">
 											</div>
 										</div>
-										<div class="col-xs-6">
+										<div class="col-sm-6">
 											<div class="form-group">
 												<label>Children</label>
 												<input type="number" name="children" value="0" class="form-control">

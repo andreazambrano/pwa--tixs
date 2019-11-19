@@ -4430,7 +4430,7 @@ span.featured-tour {
     font-size: 16px;
     background: #fff;
     position: relative;
-     border-radius: 15px;
+     border-radius: 9px;
     margin-bottom: 30px
 }
 
@@ -4556,6 +4556,8 @@ span.featured-tour {
 
 .destination-box.list-style {
     height: 250px;
+    /*max-height: 192px; */
+    /*linea de arriba agregada*/
     position: relative;
     margin-bottom: 30px;
     line-height: 1.375
