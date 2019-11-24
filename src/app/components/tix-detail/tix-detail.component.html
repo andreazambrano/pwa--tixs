@@ -14,7 +14,7 @@
 					<ul class="nav nav-pills" role="tablist">
 						<li role="presentation" class="active"><a href="restaurant-detail.html#Photos" aria-controls="messages" role="tab" data-toggle="tab"><i class="ti-star"></i> Overview</a></li>
 						<li role="presentation"><a href="restaurant-detail.html#Features" aria-controls="profile" role="tab" data-toggle="tab"><i class="ti-crown"></i> Features</a></li>
-						<li   style="z-index: 9998;">
+						<li   style="z-index: 9998;" *ngIf="this._uw.isLogged && this._uw.partner || this._uw.admin">
 							<div >
 								<ngx-float-button icon="add" direction='bottom'>
 								    <ngx-float-item-button icon="mode_edit" content="Edit" ></ngx-float-item-button>
@@ -157,7 +157,7 @@
 											<span class="text theme-cl"  *ngIf="tix">
 											FROM
 											</span>
-											<span class="real-price padd-l-10 font-bold" *ngIf="tix.prices">$ {{tix.prices[0].price}}
+											<span class="real-price padd-l-10 font-bold" *ngIf="tix.prices" >$ {{tix.prices[0].price}}
 											</span>
 											<sub>/Per Person</sub></h5>
 									</div>
