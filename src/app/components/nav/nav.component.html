@@ -19,15 +19,15 @@
         
           <ul class="nav navbar-nav navbar-left" data-in="fadeInDown" data-out="fadeOutUp">
           
-            
+              <li><a routerLink="addtixs" *ngIf="this._uw.isLogged && this._uw.partner || this._uw.admin"><b>Add tix</b></a></li>
                 <li><a routerLink="alltixs">All Tixs</a></li>
-                <li class="dropdown" >
+               <!--  <li class="dropdown" >
                   
                   <a routerLink="mytixs"  *ngIf="this._uw.isLogged && this._uw.partner || this._uw.admin" class="dropdown-toggle" data-toggle="dropdown">My Tixs</a>
                   <ul class="dropdown-menu animated fadeOutUp" *ngIf="this._uw.isLogged && this._uw.partner || this._uw.admin"  >
                     <li><a routerLink="addtixs" *ngIf="this._uw.isLogged && this._uw.partner || this._uw.admin">Add Tix</a></li>
                   </ul>
-                </li>
+                </li> -->
 
 
                 <li><a routerLink="partners" *ngIf="this._uw.isLogged &&  this._uw.admin">Partners</a></li>
