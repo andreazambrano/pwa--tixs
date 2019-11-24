@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { CarouselModule } from 'ngx-owl-carousel-o';
@@ -7,6 +8,8 @@ import { ArchwizardModule } from 'angular-archwizard';
 import { HttpClientModule } from '@angular/common/http';
 import { Component, Inject} from '@angular/core';
 import { XunkCalendarModule } from '../xunk-calendar/xunk-calendar.module';
+import { NgxFloatButtonModule } from 'ngx-float-button';
+
 // import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 //RUTAS
@@ -161,6 +164,7 @@ import { SuccessdeletevalidationComponent } from './components/successdeletevali
     BrowserModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     HttpClientModule,
+    AngularMultiSelectModule,
     FormsModule,
     BrowserAnimationsModule,
     HttpModule,
@@ -174,7 +178,8 @@ import { SuccessdeletevalidationComponent } from './components/successdeletevali
     ArchwizardModule,
     CarouselModule,
     XunkCalendarModule,
-    FilePickerModule
+    FilePickerModule,
+    NgxFloatButtonModule
   ],
   exports: [
     MatButtonModule, MatCheckboxModule, MatTabsModule,MatDialogModule,MatIconModule,MatInputModule,
@@ -183,7 +188,8 @@ import { SuccessdeletevalidationComponent } from './components/successdeletevali
     FormsModule,
     ReactiveFormsModule,
     MatBadgeModule,
-    MatTableModule
+    MatTableModule,
+    NgxFloatButtonModule
   ],
  entryComponents:[ DialogOverviewExampleDialog ],
   providers: [

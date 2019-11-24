@@ -68,8 +68,15 @@ export class DataApiService {
 		return this.http.get(url_api);
 
 	}
+
 	getAllTixsReturn(){
 		const url_api = 'https://db.andesproadventures.com:3013/api/tixes?filter[where][status]=activated';
+		return (this.tixs = this.http.get(url_api));
+
+	}
+	getMyTixs(id:string){
+		let indice = id;
+		const url_api = "https://db.andesproadventures.com:3013/api/tixes?filter[where][userd]=a"+indice;
 		return (this.tixs = this.http.get(url_api));
 
 	}

@@ -1,4 +1,4 @@
-  <nav class="navbar navbar-default navbar-mobile navbar-fixed light bootsnav">
+  <nav class="navbar navbar-default navbar-mobile navbar-fixed light bootsnav" style="z-index: 9999">
       <div class="container">
       
         <!-- Start Logo Header Navigation -->
@@ -25,7 +25,7 @@
                   
                   <a routerLink="mytixs"  *ngIf="this._uw.isLogged && this._uw.partner || this._uw.admin" class="dropdown-toggle" data-toggle="dropdown">My Tixs</a>
                   <ul class="dropdown-menu animated fadeOutUp" *ngIf="this._uw.isLogged && this._uw.partner || this._uw.admin"  >
-                    <li><a routerLink="addtixs" *ngIf="this._uw.isLogged">Add Tix</a></li>
+                    <li><a routerLink="addtixs" *ngIf="this._uw.isLogged && this._uw.partner || this._uw.admin">Add Tix</a></li>
                   </ul>
                 </li>
 

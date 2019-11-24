@@ -9,7 +9,8 @@
 						</div>
 						<div class="tr-single-body">							
 							<div class="row">
-								<div class="col-md-6 col-sm-6">								<div class="col-md-12 col-sm-6">
+								<div class="col-md-3 col-sm-6">								
+									<div class="col-md-12 col-sm-6">
 										<div class="widget simple-widget">
 											<div class="widget-caption danger">
 												<div class="row">
@@ -33,6 +34,11 @@
 											</div>
 										</div>
 									</div>
+										
+															
+								</div>
+								<div class="col-md-3 col-sm-6">								
+									
 										
 									<div class="col-md-12 col-sm-6">
 										<div class="widget simple-widget">
@@ -60,11 +66,130 @@
 								</div>
 							</div>
 		
-							<div class="row">					
-							</div>							
+														
 						</div>
 					</div>
-				</div>		
+				</div>	
+				<div class="col-lg-12 col-md-12 col-sm-9" *ngIf="this._uw.partner && this._uw.admin">
+					  <div class="col-lg-3 col-md-4 col-xs-6" *ngFor="let tix of tixs2">
+            <article class="destination-box style-1">
+
+              <div class="destination-box-image" >
+                <figure >
+                  <a routerLink="/tix-detail/{{tix.id}}">
+                    <img src="{{tix.images[0]}}" class="img-responsive listing-box-img" alt="{{tix.productName}}"  />
+                    <div class="list-overlay" ></div>
+                  </a>
+                  <div class="discount-flick">new</div>
+                  <h4 class="destination-place">
+                    <a routerLink="/tix-detail/{{tix.id}}">{{tix.productName}}</a>
+                  </h4>
+                  <a routerLink="/tix-detail/{{tix.id}}" class="list-like left"><i class="ti-heart"></i></a>
+                </figure>
+              </div>
+              
+              <div class="entry-meta">
+                <div class="meta-item meta-rating">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star-half"></i>
+                </div>
+                <div class="meta-item meta-comment fl-right">
+                  <span class="text">FROM</span><span class="real-price padd-l-10 font-bold">$ {{tix.prices[0].price}}</span>
+                </div>
+              </div>
+
+              <div class="inner-box">
+                <div class="box-inner-ellipsis">
+                  <h4 class="entry-location">
+                    <a routerLink="/tix-detail/{{tix.id}}">{{tix.description | slice:0:20}} ...</a>
+                  </h4>
+                  <div class="price-box">
+                    <div class="destination-price fl-right">
+                      <a routerLink="/tix-detail/{{tix.id}}">
+                          <i class="theme-cl ti-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            </article>
+          </div>
+					
+				</div>	
+
+					<div class="col-lg-12 col-md-12 col-sm-9 " *ngIf="this._uw.partner || this._uw.admin">
+						<div class="row mrg-0 mrg-top-20">
+							<div class="tr-single-box">
+								<div class="tr-single-header">
+									<h3 class="dashboard-title">My Tixs</h3>
+								</div>
+								<div class="tr-single-body">
+									<!-- row -->
+									<div class="row mrg-bot-15">
+										<div class="col-md-4 col-sm-7">
+											<input type="text" class="form-control height-50" value="" placeholder="Search by listing name">
+										</div>
+										<div class="col-md-6 col-sm-5">
+											<input type="submit" class="btn theme-btn height-50 width-150" value="Search">
+										</div>
+									</div>
+									
+									<!-- row -->
+									<div class="row">
+										
+										<!-- Single booking -->
+										<div class="col-md-12 " *ngFor="let tix of tixs2">
+											<div class="dasboard-prop-listing ">
+												<div class="blog_listing_image book_image">
+												   <a routerLink="/tix-detail/{{tix.id}}"> 
+														<img src="{{tix.images[0]}}" class="img-responsive" alt="">
+													</a>
+												</div>
+												<div class="prop-info">
+													<h4 class="listing_title_book">
+														Hotel Green Resort vally, Shimla
+													</h4>
+
+													<div class="user_dashboard_listed">
+														<strong>Period:</strong>  10-12-2018 <strong>to</strong> 19-12-2018 
+													</div>
+													
+													<div class="user_dashboard_listed">
+														<strong>Night:</strong>  7th 
+													</div>
+
+													<div class="user_dashboard_listed">
+														<strong>Invoice No: </strong> BA0324 254 875 4158 
+													</div>
+
+													<div class="user_dashboard_listed">
+														<strong>Adults:  </strong> 4th  
+													</div>
+													
+													<div class="user_dashboard_listed">
+														<strong>Children:  </strong> 2th  
+													</div> 													
+												</div>
+												<div class="info-container_booking">
+													<span class="booking-success">Confirmed</span>
+													<a href="invoice.html" class="booking-detail">View Detail</a>
+													<span class="booking-cancel">Cancel Booking</span>
+												</div>
+											</div>
+											
+										</div>
+										
+									
+									</div>
+								</div>
+							</div>
+						</div>
+					
+					
+				</div>
 			</div>
 		</div>
 	</section>

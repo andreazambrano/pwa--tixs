@@ -60,13 +60,27 @@ submitted = false;
       this.user = this.authService.getCurrentUser();
       if (this.user  != undefined){
         let val=(this.user.id).toString();
-        this.dataApi.getCards(val).subscribe((res:any) => {
-        if (res[0] === undefined){
-          }else{
-            this._uw.card= (res[0]);
-          if (res[0].type=="adminType"){
-              this._uw.admin=true;
-            }                  
+      this.dataApi.getCards(val).subscribe((res:any) => {
+      if (res[0] === undefined){
+        console.log("no");
+        this.router.navigate(['/new-member']);
+        }
+      else{
+        console.log("si");
+        this._uw.card= (res[0]);
+        this._uw.bandera=(res[0].bander);
+        if (res[0].type=="affiliateType"){
+          this._uw.affiliate=true;
+          this.router.navigate(['/booking']);
+        }
+        if (res[0].type=="partnerType"){
+          this._uw.partner=true;
+        }
+        if (res[0].type=="adminType"){
+          this._uw.admin=true;
+          // this.getUsersPending();
+        }        
+        this._uw.type=res[0].type;             
         }
       });
      }   

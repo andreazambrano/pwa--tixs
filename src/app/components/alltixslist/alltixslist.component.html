@@ -67,8 +67,8 @@
 													<a href="destination-detail.html">Bali, Indonesia</a>
 												</h3>
 												<div class="entry-content">
-													<p>Post A Job To Tell Us About Your Project. We'll Quickly Match You With The Right Freelancers.</p>
-													<span class="price">From <strong class="theme-cl">$170</strong> /per person</span>
+													<p>{{tix.description | slice:0:127}}</p>
+													<span class="price">From <strong class="theme-cl">$ {{tix.prices[0].price}}</strong> /per person</span>
 												</div>
 											</div>
 										</div>
@@ -78,7 +78,7 @@
 												<div class="coauthors">
 													<div class="vcard author">
 														<div class="fn">
-															<h4><a href="destination-detail.html">Hong Kong</a></h4>
+															<h4><a href="destination-detail.html">{{tix.category[0]}}</a></h4>
 														</div>
 													</div>
 												</div>

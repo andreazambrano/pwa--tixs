@@ -51,7 +51,7 @@
                     <div class="coauthors">
                       <span class="vcard author">
                         <span class="fn">
-                          <a routerLink="/tix-detail/{{tix.id}}">Lisa Scholfield</a>
+                          <a routerLink="/tix-detail/{{tix.id}}">{{tix.category[0]}}</a>
                         </span>
                       </span>
                     </div>
@@ -71,11 +71,11 @@
                 <div class="inner-box">
                   <div class="box-inner-ellipsis">
                     <h4 class="entry-title">
-                      <a routerLink="/tix-detail/{{tix.id}}">New York</a>
+                      <a routerLink="/tix-detail/{{tix.id}}">FROM</a>
                     </h4>
                     <div class="price-box">
                       <div class="tour-price fl-right">
-                        <i class="ti ti-user"></i><span class="theme-cl f-bold">$240</span>
+                        <i class="ti ti-user"></i><span class="theme-cl f-bold">$ {{tix.prices[0].price}}</span>
                       </div>
                     </div>
                   </div>

@@ -20,12 +20,14 @@ import { MatButtonModule, MatCheckboxModule,MatTabsModule } from '@angular/mater
 import { XunkCalendarModule } from '../../../xunk-calendar/xunk-calendar.module';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { speedDialFabAnimations } from './speed-dial-fab.animations';
 
 
 @Component({
   selector: 'app-tix-detail',
   templateUrl: './tix-detail.component.html',
-  styleUrls: ['./tix-detail.component.css']
+  styleUrls: ['./tix-detail.component.css'],
+  animations: speedDialFabAnimations
 })
 export class TixDetailComponent implements OnInit {
 
@@ -33,6 +35,29 @@ export class TixDetailComponent implements OnInit {
   ngFormAddtixs: FormGroup;
   ngFormSendBook: FormGroup;
   submitted = false;
+
+
+
+fabButtons = [
+    {
+      icon: 'timeline'
+    },
+    {
+      icon: 'view_headline'
+    },
+    {
+      icon: 'room'
+    },
+    {
+      icon: 'lightbulb_outline'
+    },
+    {
+      icon: 'lock'
+    }
+  ];
+  buttons = [];
+  fabTogglerState = 'inactive';
+
 
   constructor(
     private router: Router, 
@@ -222,4 +247,21 @@ export class TixDetailComponent implements OnInit {
   	this.dataApi.getTixById(id).subscribe(tix => (this.tix = tix));
     
   }
+
+
+  showItems() {
+    this.fabTogglerState = 'active';
+    this.buttons = this.fabButtons;
+  }
+
+  hideItems() {
+    this.fabTogglerState = 'inactive';
+    this.buttons = [];
+  }
+
+  onToggleFab() {
+    this.buttons.length ? this.hideItems() : this.showItems();
+  }
+
+
 }

@@ -40,7 +40,7 @@ export class MyTixsComponent implements OnInit {
   cardArray: any[]=[];
 
  public tixs:TixInterface;
-
+public tixs2:TixInterface;
   public books:BookInterface;
  getBookPending(){
          this.dataApi
@@ -67,37 +67,30 @@ export class MyTixsComponent implements OnInit {
     this._uw.name=this.user.name;
  	 	this.onCheckUser();     //--header update
     let val=(this.user.id).toString();
+    this.dataApi.getMyTixs(val).subscribe((tixs2: TixInterface) => (this.tixs2=tixs2)) 
     this.dataApi.getCards(val).subscribe((res:any) => {
       if (res[0] === undefined){
         console.log("no");
         this.router.navigate(['/new-member']);
-        }else{
+        }
+      else{
         console.log("si");
         this._uw.card= (res[0]);
         this._uw.bandera=(res[0].bander);
-        //console.log(res[0].type);
         if (res[0].type=="affiliateType"){
           this._uw.affiliate=true;
- //         console.log("el uuario es un affiliate");
           this.router.navigate(['/booking']);
         }
         if (res[0].type=="partnerType"){
           this._uw.partner=true;
-
-   //       console.log("el uuario es un partner");
         }
         if (res[0].type=="adminType"){
           this._uw.admin=true;
           this.getUsersPending();
-     //     console.log("el uuario es un adminitrador");
         }        
-        
-
-        this._uw.type=res[0].type;
-        //  console.log("bandera dentro", this._uw.bandera);              
+        this._uw.type=res[0].type;             
         }
       });
-    //console.log("bandera fuera: ", this._uw.bandera);
   }
 
   getUsersPending(){
@@ -117,6 +110,9 @@ export class MyTixsComponent implements OnInit {
         this.dataApi
         .getPendingPartners()
         .subscribe((cards: CardInterface) => (this.cards=cards));
+    }
+    getMyTixs(card_id:string){
+      this.dataApi.getMyTixs(card_id);
     }
 
   getCards(card_id: string){
