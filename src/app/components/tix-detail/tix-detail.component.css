@@ -2,6 +2,9 @@
 	height: 500px;
 	min-height: 500px;
 }
+::ng-deep .ngx-float-item-button {
+    background-color: blue;
+}
 button,html input[type=button],input[type=reset],input[type=submit] {
  width: 100px;
     background: #27AE60;
